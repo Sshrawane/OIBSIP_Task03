@@ -1,0 +1,100 @@
+HTML Code:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.8" />
+<title>Celsius to Fahrenheit</title>
+<link rel="stylesheet" href="t3.css">
+</head>
+<body>
+<div>
+<h1>Converter Celsius To Fahrenheit And Vice Versa</h1>
+</div>
+<section id="sec">
+<div class="con">
+<div class="cona" id="dil">
+<label for="celsius">Celsius :</label>
+<input type="number" id="celsius" />
+</div>
+<div class="cona" id="di2">
+<label for="celsius">Fahrenheit ;</label>
+<input type="number" id="fahrenheit" />
+</div>
+</div>
+</section>
+<script src="t3.js"></script>
+</body>
+</html>
+
+CSS Code:
+
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: cursive;
+    font-size: 35px;
+    }
+    h1{
+    font-size: larger;
+    font-family: 'Gill Sans', 'Gill Sans MT, Calibri, 'Trebuchet MS', sans-serif;
+    width: 70%;
+    margin: 15px;
+    margin-top: 90px;
+    margin-left: 270px;
+    }
+    body {
+    height: 100%;
+    background-color: rgb(164, 180, 233);
+    color:#200544;
+    text-decoration: underline;
+    }
+    #dil{
+    margin: 15px;
+    float: left;
+    width: 44%;
+    height: 90%;
+    background-color: rgb(223, 133, 17)
+    border-radius: 20px;
+    padding: 20px;
+    } 
+    #di2{
+    right: 0;
+    float: right;
+    width: 44%;
+    margin: 15px;
+    border-radius: 20px;
+    padding: 20px;
+    .cona {
+    margin-top: 250px;
+    #sec{
+    margin-top: 200px;
+    }
+    input {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid #d2d2d2;
+    outline: none;
+    margin-top: 8px;
+    padding: 10px;
+    }
+    input focus {
+    border-color: #1838d8;
+    }
+
+JavaScript code:
+
+let celsius = document.getElementById('celsius');
+let fahrenheit = document.getElementById('fahrenheit');
+celsius.oninput = () => {
+let output = (parseFloat(celsius.value) * 9)/5+32;
+fahrenheit.value = parseFloat(output.toFixed(2));
+};
+fahrenheit.oninput = () => {
+let output = ((parseFloat(fahrenheit.value) - 32) * 5)/9;
+celsius.value = parseFloat(output.toFixed(2));
+};
